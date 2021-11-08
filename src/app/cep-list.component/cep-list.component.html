@@ -1,0 +1,16 @@
+<h2>CEP's</h2>
+
+<div *ngFor="let cep of ceps">
+  <h3>
+    <a
+      [routerLink]="['/ceps', cep.cep]"
+      [title]="cep.cidade + ' - ' + cep.uf"
+    >
+      {{ cep.cidade }}
+    </a>
+    <br />
+    {{ cep.cep }}
+  </h3>
+
+  <p *ngIf="cep.logradouro">Endereço: {{ cep.logradouro }}</p>
+</div>
